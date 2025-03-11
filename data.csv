@@ -1,0 +1,244 @@
+asof_date,City/Post,"Student/Exchange Visitors (F, M, J)","Petition-Based Temporary Workers (H, L, O, P, Q)","Crew and Transit (C, D, C1/D)",Visitors (B1/B2),country,city_ascii,iso2,lat,lng,update_date
+2025-03-06,Abidjan,93.0,24.0,8.0,280.0,Côte d’Ivoire,Abidjan,CI,5.3167,-4.0333,2025-01-07
+2025-03-06,Abu Dhabi,37.0,23.0,,433.0,United Arab Emirates,Abu Dhabi,AE,24.4667,54.3667,2025-01-07
+2025-03-06,Abuja,55.0,56.0,56.0,80.0,Nigeria,Abuja,NG,9.0667,7.4833,2025-01-07
+2025-03-06,Accra,80.0,149.0,93.0,119.0,Ghana,Accra,GH,5.55,-0.2,2025-01-07
+2025-03-06,Adana,,,,,Turkey,Adana,TR,37.0,35.3213,2025-01-07
+2025-03-06,Addis Ababa,170.0,233.0,61.0,233.0,Ethiopia,Addis Ababa,ET,9.03,38.74,2025-01-07
+2025-03-06,Algiers,91.0,7.0,1.0,121.0,Algeria,Algiers,DZ,36.7539,3.0589,2025-01-07
+2025-03-06,Almaty,10.0,10.0,5.0,17.0,Kazakhstan,Almaty,KZ,43.24,76.915,2025-01-07
+2025-03-06,Amman,8.0,16.0,6.0,51.0,Jordan,Amman,JO,31.9497,35.9328,2025-01-07
+2025-03-06,Amsterdam,3.0,6.0,5.0,18.0,Netherlands,Amsterdam,NL,52.3728,4.8936,2025-01-07
+2025-03-06,Ankara,14.0,37.0,,560.0,Turkey,Ankara,TR,39.93,32.85,2025-01-07
+2025-03-06,Antananarivo,7.0,7.0,7.0,7.0,Madagascar,Antananarivo,MG,-18.91,47.525,2025-01-07
+2025-03-06,Apia,60.0,60.0,60.0,60.0,Samoa,Apia,WS,-13.8333,-171.75,2025-01-07
+2025-03-06,Ashgabat,87.0,87.0,87.0,87.0,Turkmenistan,Ashgabat,TM,37.9375,58.38,2025-01-07
+2025-03-06,Asmara,60.0,60.0,60.0,60.0,Eritrea,Asmara,ER,15.3228,38.925,2025-01-07
+2025-03-06,Astana,11.0,,5.0,25.0,Kazakhstan,Astana,KZ,51.1472,71.4222,2025-01-07
+2025-03-06,Asuncion,17.0,17.0,17.0,24.0,Paraguay,Asuncion,PY,-25.3,-57.6333,2025-01-07
+2025-03-06,Athens,9.0,1.0,43.0,62.0,Greece,Athens,GR,37.9842,23.7281,2025-01-07
+2025-03-06,Auckland,10.0,10.0,25.0,25.0,New Zealand,Auckland,NZ,-36.8406,174.74,2025-01-07
+2025-03-06,Baghdad,,,,105.0,Iraq,Baghdad,IQ,33.3153,44.3661,2025-01-07
+2025-03-06,Baku,3.0,1.0,1.0,9.0,Azerbaijan,Baku,AZ,40.3953,49.8822,2025-01-07
+2025-03-06,Bamako,21.0,21.0,21.0,175.0,Mali,Bamako,ML,12.6392,-8.0028,2025-01-07
+2025-03-06,Bandar Seri Begawan,28.0,28.0,28.0,28.0,Brunei,Bandar Seri Begawan,BN,4.8903,114.9422,2025-01-07
+2025-03-06,Bangkok,2.0,2.0,2.0,31.0,Thailand,Bangkok,TH,13.7525,100.4942,2025-01-07
+2025-03-06,Bangui,,,,,Central African Republic,Bangui,CF,4.3733,18.5628,2025-01-07
+2025-03-06,Banjul,48.0,48.0,42.0,48.0,"Gambia, The",Banjul,GM,13.4531,-16.5775,2025-01-07
+2025-03-06,Barcelona,,,,,Spain,Barcelona,ES,41.3828,2.1769,2025-01-07
+2025-03-06,Beijing,7.0,8.0,7.0,17.0,China,Beijing,CN,39.9067,116.3975,2025-01-07
+2025-03-06,Beirut,28.0,43.0,174.0,174.0,Lebanon,Beirut,LB,33.8983,35.5057,2025-01-07
+2025-03-06,Belfast,14.0,14.0,14.0,82.0,United Kingdom,Belfast,GB,54.5964,-5.93,2025-01-07
+2025-03-06,Belgrade,1.0,18.0,1.0,3.0,Serbia,Belgrade,RS,44.82,20.46,2025-01-07
+2025-03-06,Belmopan,7.0,7.0,27.0,27.0,Belize,Belmopan,BZ,17.2514,-88.7669,2025-01-07
+2025-03-06,Berlin,11.0,22.0,4.0,9.0,Germany,Berlin,DE,52.52,13.405,2025-01-07
+2025-03-06,Bern,1.0,1.0,1.0,1.0,Switzerland,Bern,CH,46.9481,7.4475,2025-01-07
+2025-03-06,Bishkek,14.0,7.0,,86.0,Kyrgyzstan,Bishkek,KG,42.8747,74.6122,2025-01-07
+2025-03-06,Bogota,8.0,8.0,8.0,700.0,Colombia,Bogota,CO,4.7111,-74.0722,2025-01-07
+2025-03-06,Brasilia,1.0,1.0,1.0,22.0,Brazil,Brasilia,BR,-15.7939,-47.8828,2025-01-07
+2025-03-06,Bratislava,3.0,3.0,3.0,3.0,Slovakia,Bratislava,SK,48.1439,17.1097,2025-01-07
+2025-03-06,Brazzaville,78.0,296.0,78.0,296.0,Congo (Brazzaville),Brazzaville,CG,-4.2694,15.2711,2025-01-07
+2025-03-06,Bridgetown,2.0,2.0,2.0,60.0,Barbados,Bridgetown,BB,13.0975,-59.6167,2025-01-07
+2025-03-06,Brussels,7.0,7.0,7.0,7.0,Belgium,Brussels,BE,50.8467,4.3525,2025-01-07
+2025-03-06,Bucharest,14.0,14.0,14.0,150.0,Romania,Bucharest,RO,44.4325,26.1039,2025-01-07
+2025-03-06,Budapest,22.0,25.0,17.0,27.0,Hungary,Budapest,HU,47.4925,19.0514,2025-01-07
+2025-03-06,Buenos Aires,1.0,1.0,1.0,35.0,Argentina,Buenos Aires,AR,-34.6033,-58.3817,2025-01-07
+2025-03-06,Bujumbura,6.0,6.0,6.0,6.0,Burundi,Bujumbura,BI,-3.3833,29.3667,2025-01-07
+2025-03-06,Cairo,30.0,42.0,42.0,42.0,Egypt,Cairo,EG,30.0444,31.2358,2025-01-07
+2025-03-06,Calgary,15.0,31.0,743.0,743.0,Canada,Calgary,CA,51.05,-114.0667,2025-01-07
+2025-03-06,Canberra,,,,,Australia,Canberra,AU,-35.2931,149.1269,2025-01-07
+2025-03-06,Cape Town,8.0,8.0,8.0,8.0,South Africa,Cape Town,ZA,-33.9253,18.4239,2025-01-07
+2025-03-06,Caracas,,,,,Venezuela,Caracas,VE,10.4806,-66.9036,2025-01-07
+2025-03-06,Casablanca,44.0,332.0,332.0,332.0,Morocco,Casablanca,MA,33.5333,-7.5833,2025-01-07
+2025-03-06,Chengdu,,,,,China,Chengdu,CN,30.66,104.0633,2025-01-07
+2025-03-06,Chiang Mai,4.0,,21.0,78.0,Thailand,Chiang Mai,TH,18.7953,98.9986,2025-01-07
+2025-03-06,Chisinau,9.0,9.0,16.0,37.0,Moldova,Chisinau,MD,47.0228,28.8353,2025-01-07
+2025-03-06,Colombo,45.0,58.0,45.0,114.0,Sri Lanka,Colombo,LK,6.9344,79.8428,2025-01-07
+2025-03-06,Conakry,56.0,56.0,56.0,56.0,Guinea,Conakry,GN,9.5092,-13.7122,2025-01-07
+2025-03-06,Copenhagen,1.0,1.0,1.0,14.0,Denmark,Copenhagen,DK,55.6761,12.5683,2025-01-07
+2025-03-06,Cotonou,197.0,197.0,197.0,197.0,Benin,Cotonou,BJ,6.3667,2.4333,2025-01-07
+2025-03-06,Dakar,10.0,10.0,12.0,43.0,Senegal,Dakar,SN,14.6928,-17.4467,2025-01-07
+2025-03-06,Damascus,,,,,Syria,Damascus,SY,33.5131,36.2919,2025-01-07
+2025-03-06,Dhahran,1.0,1.0,1.0,1.0,Saudi Arabia,Dhahran,SA,26.2667,50.15,2025-01-07
+2025-03-06,Dhaka,243.0,17.0,154.0,353.0,Bangladesh,Dhaka,BD,23.7639,90.3889,2025-01-07
+2025-03-06,Dili,0.0,,,0.0,Timor-Leste,Dili,TL,-8.5536,125.5783,2025-01-07
+2025-03-06,Djibouti,20.0,30.0,30.0,30.0,Djibouti,Djibouti,DJ,11.5883,43.145,2025-01-07
+2025-03-06,Doha,2.0,29.0,7.0,73.0,Qatar,Doha,QA,25.2867,51.5333,2025-01-07
+2025-03-06,Dubai,22.0,22.0,,284.0,United Arab Emirates,Dubai,AE,25.2631,55.2972,2025-01-07
+2025-03-06,Dublin,4.0,4.0,4.0,3.0,Ireland,Dublin,IE,53.35,-6.2603,2025-01-07
+2025-03-06,Durban,1.0,1.0,1.0,2.0,South Africa,Durban,ZA,-29.8833,31.05,2025-01-07
+2025-03-06,Dushanbe,38.0,38.0,38.0,38.0,Tajikistan,Dushanbe,TJ,38.5367,68.78,2025-01-07
+2025-03-06,Edinburgh,,,,,United Kingdom,Edinburgh,GB,55.9533,-3.1892,2025-01-07
+2025-03-06,Erbil,10.0,10.0,56.0,56.0,Iraq,Erbil,IQ,36.1912,44.0092,2025-01-07
+2025-03-06,Florence,14.0,9.0,9.0,34.0,Italy,Florence,IT,43.7714,11.2542,2025-01-07
+2025-03-06,Frankfurt,24.0,15.0,4.0,25.0,Germany,Frankfurt,DE,50.1106,8.6822,2025-01-07
+2025-03-06,Freetown,176.0,176.0,176.0,176.0,Sierra Leone,Freetown,SL,8.4844,-13.2344,2025-01-07
+2025-03-06,Fukuoka,,,,,Japan,Fukuoka,JP,33.59,130.4017,2025-01-07
+2025-03-06,Gaborone,30.0,30.0,30.0,30.0,Botswana,Gaborone,BW,-24.6581,25.9122,2025-01-07
+2025-03-06,Georgetown,1.0,1.0,1.0,13.0,Guyana,Georgetown,GY,6.8058,-58.1508,2025-01-07
+2025-03-06,Guadalajara,7.0,10.0,10.0,196.0,Mexico,Guadalajara,MX,20.6767,-103.3475,2025-01-07
+2025-03-06,Guangzhou,2.0,4.0,7.0,49.0,China,Guangzhou,CN,23.13,113.26,2025-01-07
+2025-03-06,Guatemala City,2.0,6.0,6.0,65.0,Guatemala,Guatemala City,GT,14.6133,-90.5353,2025-01-07
+2025-03-06,Guayaquil,30.0,35.0,37.0,220.0,Ecuador,Guayaquil,EC,-2.19,-79.8875,2025-01-07
+2025-03-06,Halifax,38.0,36.0,710.0,710.0,Canada,Halifax,CA,44.6475,-63.5906,2025-01-07
+2025-03-06,Hamilton,12.0,12.0,12.0,12.0,Canada,Hamilton,CA,43.2567,-79.8692,2025-01-07
+2025-03-06,Hanoi,2.0,9.0,2.0,2.0,Vietnam,Hanoi,VN,21.0,105.85,2025-01-07
+2025-03-06,Harare,14.0,5.0,5.0,14.0,Zimbabwe,Harare,ZW,-17.8292,31.0522,2025-01-07
+2025-03-06,Havana,,,,,Cuba,Havana,CU,23.1367,-82.3589,2025-01-07
+2025-03-06,Helsinki,17.0,17.0,9.0,65.0,Finland,Helsinki,FI,60.1708,24.9375,2025-01-07
+2025-03-06,Hermosillo,4.0,9.0,9.0,248.0,Mexico,Hermosillo,MX,29.0989,-110.9542,2025-01-07
+2025-03-06,Ho Chi Minh City,31.0,17.0,17.0,31.0,Vietnam,Ho Chi Minh City,VN,10.7756,106.7019,2025-01-07
+2025-03-06,Hong Kong,3.0,3.0,2.0,7.0,Hong Kong,Hong Kong,HK,22.3,114.2,2025-01-07
+2025-03-06,Hyderabad,85.0,15.0,1.0,429.0,India,Hyderabad,IN,17.3617,78.4747,2025-01-07
+2025-03-06,Islamabad,26.0,5.0,5.0,298.0,Pakistan,Islamabad,PK,33.6931,73.0639,2025-01-07
+2025-03-06,Istanbul,47.0,48.0,70.0,,Turkey,Istanbul,TR,41.0136,28.955,2025-01-07
+2025-03-06,Jakarta,13.0,39.0,28.0,32.0,Indonesia,Jakarta,ID,-6.175,106.8275,2025-01-07
+2025-03-06,Jeddah,1.0,3.0,1.0,12.0,Saudi Arabia,Jeddah,SA,21.5433,39.1728,2025-01-07
+2025-03-06,Jerusalem,2.0,2.0,176.0,176.0,Israel,Jerusalem,IL,31.7789,35.2256,2025-01-07
+2025-03-06,Johannesburg,1.0,7.0,7.0,7.0,South Africa,Johannesburg,ZA,-26.2044,28.0456,2025-01-07
+2025-03-06,Juba,,,,,South Sudan,Juba,SS,4.85,31.6,2025-01-07
+2025-03-06,Kabul,,,,,Afghanistan,Kabul,AF,34.5253,69.1783,2025-01-07
+2025-03-06,Kampala,120.0,29.0,29.0,254.0,Uganda,Kampala,UG,0.3136,32.5811,2025-01-07
+2025-03-06,Kaohsiung,,,,,Taiwan,Kaohsiung,TW,22.615,120.2975,2025-01-07
+2025-03-06,Karachi,58.0,10.0,10.0,327.0,Pakistan,Karachi,PK,24.86,67.01,2025-01-07
+2025-03-06,Kathmandu,172.0,57.0,8.0,221.0,Nepal,Kathmandu,NP,27.71,85.32,2025-01-07
+2025-03-06,Khartoum,,,,,Sudan,Khartoum,SD,15.6,32.5,2025-01-07
+2025-03-06,Kigali,52.0,85.0,85.0,85.0,Rwanda,Kigali,RW,-1.9439,30.0594,2025-01-07
+2025-03-06,Kingston,0.0,0.0,0.0,0.0,Jamaica,Kingston,JM,17.9714,-76.7931,2025-01-07
+2025-03-06,Kinshasa,100.0,7.0,7.0,134.0,Congo (Kinshasa),Kinshasa,CD,-4.3219,15.3119,2025-01-07
+2025-03-06,Kolkata,375.0,,,415.0,India,Kolkata,IN,22.5675,88.37,2025-01-07
+2025-03-06,Kolonia,3.0,3.0,3.0,3.0,"Micronesia, Federated States of",Kolonia,FM,6.9639,158.2081,2025-01-07
+2025-03-06,Koror,14.0,14.0,14.0,14.0,Palau,Koror,PW,7.3419,134.4792,2025-01-07
+2025-03-06,Krakow,7.0,7.0,7.0,7.0,Poland,Krakow,PL,50.0614,19.9372,2025-01-07
+2025-03-06,Kuala Lumpur,14.0,16.0,14.0,14.0,Malaysia,Kuala Lumpur,MY,3.1478,101.6953,2025-01-07
+2025-03-06,Kyiv,,,,,Ukraine,Kyiv,UA,50.45,30.5233,2025-01-07
+2025-03-06,La Paz,7.0,7.0,85.0,85.0,Bolivia,La Paz,BO,-16.4958,-68.1333,2025-01-07
+2025-03-06,Lagos,222.0,245.0,245.0,333.0,Nigeria,Lagos,NG,6.455,3.3841,2025-01-07
+2025-03-06,Lahore,,,,,Pakistan,Lahore,PK,31.5497,74.3436,2025-01-07
+2025-03-06,Libreville,14.0,14.0,14.0,75.0,Gabon,Libreville,GA,0.3903,9.4542,2025-01-07
+2025-03-06,Lilongwe,101.0,30.0,30.0,216.0,Malawi,Lilongwe,MW,-13.9833,33.7833,2025-01-07
+2025-03-06,Lima,7.0,7.0,7.0,442.0,Peru,Lima,PE,-12.06,-77.0375,2025-01-07
+2025-03-06,Lisbon,81.0,59.0,31.0,57.0,Portugal,Lisbon,PT,38.7253,-9.15,2025-01-07
+2025-03-06,Ljubljana,9.0,9.0,9.0,9.0,Slovenia,Ljubljana,SI,46.0514,14.5061,2025-01-07
+2025-03-06,Lome,28.0,7.0,28.0,28.0,Togo,Lome,TG,6.1319,1.2228,2025-01-07
+2025-03-06,London,3.0,7.0,2.0,82.0,United Kingdom,London,GB,51.5072,-0.1275,2025-01-07
+2025-03-06,Luanda,2.0,1.0,1.0,20.0,Angola,Luanda,AO,-8.8383,13.2344,2025-01-07
+2025-03-06,Lusaka,44.0,266.0,266.0,266.0,Zambia,Lusaka,ZM,-15.4167,28.2833,2025-01-07
+2025-03-06,Luxembourg,8.0,8.0,8.0,8.0,Luxembourg,Luxembourg,LU,49.6117,6.1319,2025-01-07
+2025-03-06,Madrid,3.0,3.0,8.0,95.0,Spain,Madrid,ES,40.4169,-3.7033,2025-01-07
+2025-03-06,Majuro,7.0,7.0,7.0,7.0,Marshall Islands,Majuro,MH,7.0833,171.3833,2025-01-07
+2025-03-06,Malabo,90.0,90.0,,90.0,Equatorial Guinea,Malabo,GQ,3.7456,8.7744,2025-01-07
+2025-03-06,Managua,1.0,1.0,1.0,1.0,Nicaragua,Managua,NI,12.1364,-86.2514,2025-01-07
+2025-03-06,Manama,4.0,4.0,4.0,32.0,Bahrain,Manama,BH,26.225,50.5775,2025-01-07
+2025-03-06,Manila,7.0,17.0,2.0,29.0,Philippines,Manila,PH,14.5958,120.9772,2025-01-07
+2025-03-06,Maputo,,,,,Mozambique,Maputo,MZ,-25.9667,32.5833,2025-01-07
+2025-03-06,Marseille,,,,,France,Marseille,FR,43.2964,5.37,2025-01-07
+2025-03-06,Maseru,,,,,Lesotho,Maseru,LS,-29.31,27.48,2025-01-07
+2025-03-06,Matamoros,1.0,1.0,1.0,210.0,Mexico,Matamoros,MX,25.533,-103.25,2025-01-07
+2025-03-06,Mbabane,7.0,7.0,31.0,31.0,Eswatini,Mbabane,SZ,-26.3167,31.1333,2025-01-07
+2025-03-06,Melbourne,8.0,29.0,8.0,149.0,Australia,Melbourne,AU,-37.8142,144.9631,2025-01-07
+2025-03-06,Merida,16.0,16.0,16.0,277.0,Mexico,Merida,MX,20.97,-89.62,2025-01-07
+2025-03-06,Mexico City,10.0,21.0,21.0,262.0,Mexico,Mexico City,MX,19.4333,-99.1333,2025-01-07
+2025-03-06,Milan,16.0,29.0,18.0,34.0,Italy,Milan,IT,45.4669,9.19,2025-01-07
+2025-03-06,Minsk,,,,,Belarus,Minsk,BY,53.9,27.5667,2025-01-07
+2025-03-06,Monrovia,7.0,7.0,7.0,7.0,Liberia,Monrovia,LR,6.3133,-10.8014,2025-01-07
+2025-03-06,Monterrey,8.0,1.0,2.0,232.0,Mexico,Monterrey,MX,25.6667,-100.3,2025-01-07
+2025-03-06,Montevideo,7.0,3.0,69.0,69.0,Uruguay,Montevideo,UY,-34.8836,-56.1819,2025-01-07
+2025-03-06,Montreal,,,,,Canada,Montreal,CA,45.5089,-73.5617,2025-01-07
+2025-03-06,Moscow,,,,,Russia,Moscow,RU,55.7558,37.6172,2025-01-07
+2025-03-06,Munich,3.0,3.0,3.0,14.0,Germany,Munich,DE,48.1375,11.575,2025-01-07
+2025-03-06,Muscat,90.0,90.0,90.0,90.0,Oman,Muscat,OM,23.6139,58.5922,2025-01-07
+2025-03-06,Naha,1.0,5.0,5.0,5.0,Japan,Naha,JP,26.2122,127.6792,2025-01-07
+2025-03-06,Nairobi,59.0,43.0,63.0,80.0,Kenya,Nairobi,KE,-1.2864,36.8172,2025-01-07
+2025-03-06,Naples,14.0,9.0,9.0,34.0,Italy,Naples,IT,40.8333,14.25,2025-01-07
+2025-03-06,Nassau,4.0,6.0,4.0,8.0,"Bahamas, The",Nassau,BS,25.0781,-77.3386,2025-01-07
+2025-03-06,New Delhi,85.0,,37.0,442.0,India,New Delhi,IN,28.6139,77.2089,2025-01-07
+2025-03-06,Niamey,95.0,,95.0,95.0,Niger,Niamey,NE,13.515,2.1175,2025-01-07
+2025-03-06,Nicosia,2.0,4.0,2.0,2.0,Cyprus,Nicosia,CY,35.1725,33.365,2025-01-07
+2025-03-06,Nogales,7.0,15.0,15.0,156.0,Mexico,Nogales,MX,31.3,-110.9333,2025-01-07
+2025-03-06,Nouakchott,28.0,28.0,28.0,28.0,Mauritania,Nouakchott,MR,18.0858,-15.9785,2025-01-07
+2025-03-06,Nuevo Laredo,1.0,3.0,217.0,217.0,Mexico,Nuevo Laredo,MX,27.4861,-99.5069,2025-01-07
+2025-03-06,Oslo,8.0,8.0,8.0,8.0,Norway,Oslo,NO,59.9133,10.7389,2025-01-07
+2025-03-06,Ottawa,13.0,208.0,710.0,710.0,Canada,Ottawa,CA,45.4247,-75.695,2025-01-07
+2025-03-06,Ouagadougou,56.0,30.0,56.0,70.0,Burkina Faso,Ouagadougou,BF,12.3686,-1.5275,2025-01-07
+2025-03-06,Panama City,5.0,5.0,5.0,28.0,Panama,Panama City,PA,8.9833,-79.5167,2025-01-07
+2025-03-06,Paramaribo,3.0,3.0,3.0,3.0,Suriname,Paramaribo,SR,5.8522,-55.2039,2025-01-07
+2025-03-06,Paris,1.0,8.0,8.0,155.0,France,Paris,FR,48.8567,2.3522,2025-01-07
+2025-03-06,Perth,19.0,54.0,13.0,13.0,Australia,Perth,AU,-31.9559,115.8606,2025-01-07
+2025-03-06,Phnom Penh,7.0,7.0,7.0,7.0,Cambodia,Phnom Penh,KH,11.5694,104.9211,2025-01-07
+2025-03-06,Podgorica,2.0,2.0,2.0,2.0,Montenegro,Podgorica,ME,42.4414,19.2628,2025-01-07
+2025-03-06,Ponta Delgada,,,,,Portugal,Ponta Delgada,PT,37.7411,-25.6806,2025-01-07
+2025-03-06,Port Louis,28.0,28.0,28.0,28.0,Mauritius,Port Louis,MU,-20.1644,57.5042,2025-01-07
+2025-03-06,Port Moresby,46.0,46.0,46.0,46.0,Papua New Guinea,Port Moresby,PG,-9.4789,147.1494,2025-01-07
+2025-03-06,Porto Alegre,15.0,1.0,1.0,24.0,Brazil,Porto Alegre,BR,-30.0331,-51.23,2025-01-07
+2025-03-06,Prague,10.0,2.0,36.0,36.0,Czechia,Prague,CZ,50.0875,14.4214,2025-01-07
+2025-03-06,Praia,3.0,3.0,3.0,46.0,Cabo Verde,Praia,CV,14.918,-23.509,2025-01-07
+2025-03-06,Pretoria,,,,,South Africa,Pretoria,ZA,-25.7461,28.1881,2025-01-07
+2025-03-06,Pristina,17.0,36.0,,36.0,Kosovo,Pristina,XK,42.6633,21.1622,2025-01-07
+2025-03-06,Quito,13.0,5.0,3.0,281.0,Ecuador,Quito,EC,-0.22,-78.5125,2025-01-07
+2025-03-06,Rangoon,150.0,150.0,150.0,150.0,Burma,Rangoon,MM,16.795,96.16,2025-01-07
+2025-03-06,Recife,1.0,4.0,1.0,2.0,Brazil,Recife,BR,-8.05,-34.9,2025-01-07
+2025-03-06,Reykjavik,21.0,21.0,21.0,21.0,Iceland,Reykjavik,IS,64.1467,-21.94,2025-01-07
+2025-03-06,Riga,2.0,2.0,2.0,2.0,Latvia,Riga,LV,56.9489,24.1064,2025-01-07
+2025-03-06,Riyadh,1.0,1.0,10.0,10.0,Saudi Arabia,Riyadh,SA,24.6333,46.7167,2025-01-07
+2025-03-06,Rome,14.0,9.0,9.0,34.0,Italy,Rome,IT,41.8933,12.4828,2025-01-07
+2025-03-06,San Jose,1.0,1.0,1.0,269.0,United States,San Jose,US,37.3012,-121.848,2025-01-07
+2025-03-06,San Salvador,4.0,4.0,4.0,51.0,El Salvador,San Salvador,SV,13.6989,-89.1914,2025-01-07
+2025-03-06,Sanaa,,,,,Yemen,Sanaa,YE,15.3483,44.2064,2025-01-07
+2025-03-06,Santiago,18.0,18.0,18.0,28.0,Chile,Santiago,CL,-33.4372,-70.6506,2025-01-07
+2025-03-06,Santo Domingo,15.0,15.0,1.0,227.0,Dominican Republic,Santo Domingo,DO,18.4667,-69.95,2025-01-07
+2025-03-06,Sao Paulo,2.0,2.0,2.0,31.0,Brazil,Sao Paulo,BR,-23.55,-46.6333,2025-01-07
+2025-03-06,Sapporo,30.0,30.0,30.0,60.0,Japan,Sapporo,JP,43.0619,141.3544,2025-01-07
+2025-03-06,Sarajevo,5.0,5.0,5.0,12.0,Bosnia and Herzegovina,Sarajevo,BA,43.8564,18.4131,2025-01-07
+2025-03-06,Seoul,2.0,7.0,10.0,11.0,"Korea, South",Seoul,KR,37.56,126.99,2025-01-07
+2025-03-06,Shanghai,7.0,3.0,7.0,79.0,China,Shanghai,CN,31.2286,121.4747,2025-01-07
+2025-03-06,Shenyang,2.0,2.0,7.0,7.0,China,Shenyang,CN,41.8025,123.4281,2025-01-07
+2025-03-06,Singapore,10.0,15.0,10.0,15.0,Singapore,Singapore,SG,1.3,103.8,2025-01-07
+2025-03-06,Skopje,7.0,7.0,7.0,7.0,North Macedonia,Skopje,MK,41.9961,21.4317,2025-01-07
+2025-03-06,Sofia,12.0,12.0,12.0,12.0,Bulgaria,Sofia,BG,42.7,23.33,2025-01-07
+2025-03-06,Stockholm,6.0,1.0,1.0,20.0,Sweden,Stockholm,SE,59.3294,18.0686,2025-01-07
+2025-03-06,Surabaya,1.0,4.0,1.0,24.0,Indonesia,Surabaya,ID,-7.2458,112.7378,2025-01-07
+2025-03-06,Suva,30.0,30.0,15.0,30.0,Fiji,Suva,FJ,-18.1416,178.4419,2025-01-07
+2025-03-06,Sydney,8.0,8.0,8.0,224.0,Australia,Sydney,AU,-33.8678,151.21,2025-01-07
+2025-03-06,Taipei,15.0,4.0,8.0,4.0,Taiwan,Taipei,TW,25.0375,121.5625,2025-01-07
+2025-03-06,Tallinn,7.0,7.0,7.0,7.0,Estonia,Tallinn,EE,59.4372,24.7453,2025-01-07
+2025-03-06,Tashkent,3.0,6.0,3.0,3.0,Uzbekistan,Tashkent,UZ,41.3111,69.2797,2025-01-07
+2025-03-06,Tbilisi,3.0,3.0,,10.0,Georgia,Tbilisi,GE,41.7225,44.7925,2025-01-07
+2025-03-06,Tegucigalpa,2.0,2.0,2.0,463.0,Honduras,Tegucigalpa,HN,14.1058,-87.2047,2025-01-07
+2025-03-06,Tijuana,1.0,1.0,1.0,91.0,Mexico,Tijuana,MX,32.525,-117.0333,2025-01-07
+2025-03-06,Tirana,5.0,10.0,,61.0,Albania,Tirana,AL,41.3289,19.8178,2025-01-07
+2025-03-06,Tokyo,2.0,10.0,8.0,11.0,Japan,Tokyo,JP,35.6897,139.6922,2025-01-07
+2025-03-06,Toronto,20.0,41.0,691.0,691.0,Canada,Toronto,CA,43.7417,-79.3733,2025-01-07
+2025-03-06,Tripoli,,,,,Libya,Tripoli,LY,32.8872,13.1914,2025-01-07
+2025-03-06,Tunis,10.0,10.0,10.0,150.0,Tunisia,Tunis,TN,36.8064,10.1817,2025-01-07
+2025-03-06,Ulaanbaatar,46.0,24.0,24.0,62.0,Mongolia,Ulaanbaatar,MN,47.9203,106.9172,2025-01-07
+2025-03-06,Valletta,90.0,90.0,90.0,90.0,Malta,Valletta,MT,35.8983,14.5125,2025-01-07
+2025-03-06,Vancouver,6.0,58.0,48.0,610.0,Canada,Vancouver,CA,49.25,-123.1,2025-01-07
+2025-03-06,Vienna,4.0,5.0,4.0,4.0,Austria,Vienna,AT,48.2083,16.3725,2025-01-07
+2025-03-06,Vientiane,6.0,6.0,6.0,6.0,Laos,Vientiane,LA,17.98,102.63,2025-01-07
+2025-03-06,Vilnius,1.0,2.0,1.0,2.0,Lithuania,Vilnius,LT,54.6872,25.28,2025-01-07
+2025-03-06,Vladivostok,,,,,Russia,Vladivostok,RU,43.1333,131.9,2025-01-07
+2025-03-06,Warsaw,5.0,5.0,5.0,5.0,Poland,Warsaw,PL,52.23,21.0111,2025-01-07
+2025-03-06,Windhoek,7.0,7.0,7.0,35.0,Namibia,Windhoek,,-22.57,17.0836,2025-01-07
+2025-03-06,Wuhan,8.0,8.0,8.0,37.0,China,Wuhan,CN,30.5934,114.3046,2025-01-07
+2025-03-06,Yaounde,43.0,43.0,43.0,43.0,Cameroon,Yaounde,CM,3.8667,11.5167,2025-01-07
+2025-03-06,Yekaterinburg,,,,,Russia,Yekaterinburg,RU,56.8356,60.6128,2025-01-07
+2025-03-06,Yerevan,32.0,66.0,66.0,110.0,Armenia,Yerevan,AM,40.1814,44.5144,2025-01-07
+2025-03-06,Zagreb,8.0,8.0,8.0,8.0,Croatia,Zagreb,HR,45.8131,15.9775,2025-01-07
+2025-03-06,Chennai ( Madras),85.0,28.0,9.0,436.0,India,Chennai,IN,13.0825,80.275,2025-01-07
+2025-03-06,Dar Es Salaam,43.0,15.0,15.0,77.0,Tanzania,Dar es Salaam,TZ,-6.8161,39.2803,2025-01-07
+2025-03-06,Kuwait,3.0,7.0,7.0,4.0,Kuwait,Kuwait City,KW,29.3697,47.9783,2025-01-07
+2025-03-06,Mexicali Tpf,,,,,Mexico,Mexicali,MX,32.6633,-115.4678,2025-01-07
+2025-03-06,Mumbai (Bombay),302.0,,10.0,444.0,India,Mumbai,IN,19.0761,72.8775,2025-01-07
+2025-03-06,N`Djamena,39.0,185.0,185.0,185.0,Chad,N'Djamena,TD,12.11,15.05,2025-01-07
+2025-03-06,Osaka/Kobe,10.0,10.0,10.0,101.0,Japan,Osaka,JP,34.6939,135.5022,2025-01-07
+2025-03-06,Port Au Prince,,,,,Haiti,Port-au-Prince,HT,18.5333,-72.3333,2025-01-07
+2025-03-06,Port Of Spain,2.0,2.0,2.0,1.0,Trinidad and Tobago,Port of Spain,TT,10.6667,-61.5167,2025-01-07
+2025-03-06,Quebec,13.0,208.0,710.0,710.0,Canada,Quebec City,CA,46.8139,-71.2081,2025-01-07
+2025-03-06,Rio De Janeiro,5.0,5.0,5.0,28.0,Brazil,Rio de Janeiro,BR,-22.9111,-43.2056,2025-01-07
+2025-03-06,St Georges,,,,,Canada,Saint-Georges,CA,46.0966,-70.6768,2025-01-07
+2025-03-06,St Petersburg,,,,,Russia,Saint Petersburg,RU,59.9375,30.3086,2025-01-07
+2025-03-06,Tel Aviv,2.0,2.0,2.0,30.0,Israel,Tel Aviv-Yafo,IL,32.08,34.78,2025-01-07
+2025-03-06,Tijuana Tpf,1.0,1.0,1.0,91.0,Mexico,Tijuana,MX,32.525,-117.0333,2025-01-07
+2025-03-06,Usun-New York,7.0,7.0,,7.0,United States,New York,US,40.6943,-73.9249,2025-01-07
+2025-03-06,Washington Refugee Processing Center,54.0,54.0,54.0,54.0,United States,Washington,US,38.9047,-77.0163,2025-01-07

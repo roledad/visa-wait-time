@@ -18,7 +18,7 @@ import dash_bootstrap_components as dbc
 from data import VisaWaitTimeData
 
 asof_date = datetime.today().date()
-df = pd.read_csv("data.csv") # read the saved data parsed from the website
+df = pd.read_csv("assets/data.csv") # read the saved data parsed from the website
 countries = len(df["country"].unique())
 cities = df["city_ascii"].nunique()
 last_update = str(df["update_date"].unique()[0])
@@ -202,6 +202,7 @@ def reset_country_data(n_clicks):
 
 # Create app layout
 app.layout = dbc.Container([
+    html.Br(),
     dbc.Row(id='title', children=header, style={"padding": 0}),
     html.Br(),
 

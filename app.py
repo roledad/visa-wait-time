@@ -16,12 +16,16 @@ import dash_ag_grid as dag
 import dash_bootstrap_components as dbc
 
 from data import VisaWaitTimeData
+from data_perm import ImmigrationData
 
 asof_date = datetime.today().date()
 df = pd.read_csv("assets/data.csv") # read the saved data parsed from the website
 countries = len(df["country"].unique())
 cities = df["city_ascii"].nunique()
 last_update = str(df["update_date"].unique()[0])
+
+immigration_data = ImmigrationData(asof_date)
+emp_based_pd = immigration_data.emp_based_pd
 
 VISA_TYPES = [
         "Petition-Based Temporary Workers (H, L, O, P, Q)",
@@ -32,15 +36,29 @@ VISA_TYPES = [
 app = Dash(__name__,  external_stylesheets=[dbc.themes.SPACELAB])
 server = app.server
 
-header = html.Div(
+header_0 = html.Div(
     children=[
-        html.H1(children="Global Visa Wait Times",
+        html.H1(children="Global US-Visa Wait Times",
                 style={"font-family": "Courier", "font-size": "30px", "font-weight": "bold", 'color': 'darkblue'}),
         html.Div(children=f"As of: {asof_date}",
                 style={"font-family": "Courier", "font-size": "15px"}),
         html.Div([
             html.A("Data Source: Travel.State.Gov",
                 href=VisaWaitTimeData.VISA_WAIT_TIME_URL,
+                style={"font-family": "Courier", "font-size": "15px"})]),
+    ])
+
+header_1 = html.Div(
+    children=[
+        html.H1(children="Employment-based Visa Wait Times",
+                style={"font-family": "Courier", "font-size": "30px", "font-weight": "bold", 'color': 'darkblue'}),
+        html.Div([
+            html.A(f"{immigration_data.emp_based_bulletin}",
+                href=ImmigrationData.USCIS_URL,
+                style={"font-family": "Courier", "font-size": "15px"})]),
+        html.Div([
+            html.A("FLAG.DOL.GOV",
+                href=ImmigrationData.DOL_URL,
                 style={"font-family": "Courier", "font-size": "15px"})]),
     ])
 
@@ -73,7 +91,7 @@ def make_metric_card(name, value):
 
 metrics_value = [countries, cities, len(VISA_TYPES), last_update]
 metrics_name = ['Countries', 'Cities', 'Visa Types', 'Last Update']
-cards = [make_metric_card(name, value) for name, value in zip(metrics_name, metrics_value)]
+cards_metric = [make_metric_card(name, value) for name, value in zip(metrics_name, metrics_value)]
 
 # function to create visa wait time global map
 def plot_global_map(visa_type: str="Petition-Based Temporary Workers (H, L, O, P, Q)"):
@@ -193,6 +211,93 @@ def update_country_data(country):
                prevent_initial_call=True
                )
 
+###### Employment-based Visa Wait Times ######
+# helper function to create metric cards
+def make_perm_card(name, value):
+    if name == 'Last Update':
+        child_p = value
+        f_color = 'forestgreen'
+    elif name == "Ave. Processing Days":
+        child_p = f'{value:,.0f}'
+        f_color = 'rgb(53 86 120)'
+    else:
+        child_p = value
+        f_color = 'rgb(53 86 120)'
+
+    return dbc.Col(
+        dbc.Card([
+            dbc.CardBody([
+                html.H4(name, className="card-title",
+                        style={'margin': '0px', 'fontSize': '18px', 'fontWeight': 'bold'}),
+                html.P(child_p, className="card-value",
+                       style={'margin': '0px', 'fontWeight': 'bold', 'color': f_color}),
+            ], style={'textAlign': 'center', "font-family": "Courier"}),
+        ],
+        style={
+            'border-left': '7px solid #3E638D',
+            'paddingBlock': '10px',
+            'borderRadius': '10px',
+            'box-shadow': '0 4px 8px 0 rgba(0, 0, 0, 0.1)'
+        }),
+        width=3  # This ensures 4 cards in one row
+    )
+
+cards_perm = [make_perm_card(name, value) for name, value in immigration_data.perm_reviews.items()]
+
+# function to create the Priority Date data grid
+def get_pd_data():
+    "get Priority Date data for the grid"
+    column_defs = [
+        { 'field': 'Employment-type' },
+        { 'field': 'All Chargeability Areas Except Those Listed' },
+        { 'field': 'CHINA-mainland born' },
+        { 'field': 'MEXICO'},
+        { 'field': 'PHILIPPINES'},
+        { 'field': 'table'}
+    ]
+    grid = dag.AgGrid(
+        id="priority-days",
+        rowData=emp_based_pd.to_dict("records"),
+        columnDefs=column_defs,
+        defaultColDef={"sortable": True, "filter": True, "resizable": True,
+                       "wrapHeaderText": True, "autoHeaderHeight": True,},
+        style={'height': '400px', 'width': '100%'}
+    )
+    return grid
+
+pd_wait_time = get_pd_data()
+
+# dropdown list for tables
+table_dropdown = html.Div(
+        children=[
+                    html.A("Select Table:", style={"font-weight": "bold", 'color': 'darkblue'}),
+                    dcc.Dropdown(
+                        id="table-dropdown",
+                        options=[{"label": tbl, "value": tbl} for tbl in emp_based_pd["table"].sort_values().unique()],
+                    ),
+                    html.Div(id="table")
+                ],
+                style={"width": "20%", "font-family": "Courier", "font-size": "15px"},
+    )
+
+@app.callback( Output('priority-days', 'rowData'),
+               [Input('table-dropdown', 'value')],
+               prevent_initial_call=True
+               )
+
+def update_pd_data(table):
+    "update the emp_based_pd data based on the selected table"
+    filter_df = emp_based_pd[emp_based_pd["table"] == table].drop(columns="table").to_dict("records")
+    return filter_df if table is not None else emp_based_pd.to_dict("records")
+
+@app.callback( [Output('priority-days', 'rowData', allow_duplicate=True),
+                Output('priority-days', 'filterModel', allow_duplicate=True),
+                Output('priority-days', 'columnState', allow_duplicate=True)
+                ],
+               Input('reset-btn', "n_clicks"),
+               prevent_initial_call=True
+               )
+
 def reset_country_data(n_clicks):
     # If button is clicked, reset the grid to the original DataFrame
     if n_clicks > 0:
@@ -203,10 +308,10 @@ def reset_country_data(n_clicks):
 # Create app layout
 app.layout = dbc.Container([
     html.Br(),
-    dbc.Row(id='title', children=header, style={"padding": 0}),
+    dbc.Row(id='title_0', children=header_0, style={"padding": 0}),
     html.Br(),
 
-    dbc.Row(cards, justify='center', style={'marginBlock': '10px'}),
+    dbc.Row(cards_metric, justify='center', style={'marginBlock': '10px'}),
     html.Br(),
 
     dbc.Row([
@@ -217,12 +322,24 @@ app.layout = dbc.Container([
     html.Br(),
     dbc.Row([dbc.Col([country_dropdown, html.Br(), country_wait_time, html.Br(), reset_button])]),
     html.Br(),
+    html.Br(),
+
+    dbc.Row(id='title_1', children=header_1, style={"padding": 0}),
+    html.Br(),
+    dbc.Row(cards_perm, justify='center', style={'marginBlock': '10px'}),
+    html.Br(),
+    dbc.Row([dbc.Col([table_dropdown, html.Br(), pd_wait_time, html.Br()])]),
+    dbc.Row(html.Div([
+        html.A("Disclaimer: This is a personal project and not affiliated with any government agency.",
+                style={"font-family": "Courier", "font-size": "15px"})
+    ])),
     dbc.Row(
         html.Div([
             html.A("References: Deploying Dash Apps",
                 href="https://dash.plotly.com/deployment",
                 style={"font-family": "Courier", "font-size": "15px"})])
     ),
+    html.Br(),
     html.Br(),
 ])
 

@@ -1,7 +1,9 @@
 ## visa-wait-time
 
 This repo builds a small data application to **interactively** visualize the global wait times for US Visa that was published on [Travel.State.Gov](https://travel.state.gov/content/travel/en/us-visas.html) website.  
-*Note: the website was depreciated as of March 7th, 2025*
+*Note: [the website](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times-DEACTIVATED.html) was depreciated as of March 7th, 2025*
+
+April 2025 Update: Added employer-based immigration wait-time that was published on [Travel.State.Gov](https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2025/visa-bulletin-for-april-2025.html) and [FLAG.DOL.GOV](https://flag.dol.gov/processingtimes) website.
 
 >![travel_state_gov](assets/travel_state_gov.png)
 

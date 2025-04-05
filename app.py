@@ -40,6 +40,8 @@ header_0 = html.Div(
     children=[
         html.H1(children="Global US-Visa Wait Times",
                 style={"font-family": "Courier", "font-size": "30px", "font-weight": "bold", 'color': 'darkblue'}),
+        html.H5(children="A summary of wait-time to obtain a U.S. visa for citizen of a foreign country who seeks to travel to the United States",
+                style={"font-family": "Courier", "font-size": "17px"}),
         html.Div(children=f"As of: {asof_date}",
                 style={"font-family": "Courier", "font-size": "15px"}),
         html.Div([
@@ -50,8 +52,10 @@ header_0 = html.Div(
 
 header_1 = html.Div(
     children=[
-        html.H1(children="Employment-based Visa Wait Times",
+        html.H1(children="Employment-based Immigration Wait Times",
                 style={"font-family": "Courier", "font-size": "30px", "font-weight": "bold", 'color': 'darkblue'}),
+        html.H5(children="A summary of wait-time to obtain employer-based immigration (PERM + PD final action dates)",
+                style={"font-family": "Courier", "font-size": "17px"}),
         html.Div([
             html.A(f"{immigration_data.emp_based_bulletin}",
                 href=ImmigrationData.USCIS_URL,

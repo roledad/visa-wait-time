@@ -63,8 +63,11 @@ class ImmigrationData:
         res = requests.get(url=ImmigrationData.USCIS_URL, timeout=10)
         try:
             soup = BeautifulSoup(res.content, "html.parser")
-            child_soup = soup.find('a', class_="btn btn-lg btn-success")
-            bulletin_title = child_soup.attrs['title']
+            child_soup = soup.find_all('a', class_="btn btn-lg btn-success")
+            if len(child_soup) == 2:
+                child_soup = child_soup[1]
+
+            bulletin_title = f"Visa Bulletin for {child_soup.text}"
             bulletin_link = "https://travel.state.gov" + child_soup.attrs['href']
             visa_bulltetin = pd.read_html(bulletin_link)
 

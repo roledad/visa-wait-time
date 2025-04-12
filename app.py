@@ -255,6 +255,7 @@ def get_pd_data():
         { 'field': 'Employment-type' },
         { 'field': 'All Chargeability Areas Except Those Listed' },
         { 'field': 'CHINA-mainland born' },
+        { 'field': 'INDIA' },
         { 'field': 'MEXICO'},
         { 'field': 'PHILIPPINES'},
         { 'field': 'table'}
@@ -337,13 +338,6 @@ app.layout = dbc.Container([
         html.A("Disclaimer: This is a personal project and not affiliated with any government agency.",
                 style={"font-family": "Courier", "font-size": "15px"})
     ])),
-    dbc.Row(
-        html.Div([
-            html.A("References: Deploying Dash Apps",
-                href="https://dash.plotly.com/deployment",
-                style={"font-family": "Courier", "font-size": "15px"})])
-    ),
-    html.Br(),
     html.Br(),
 ])
 

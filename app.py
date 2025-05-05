@@ -9,9 +9,9 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 # pylint: disable=C0116
 # pylint: disable=C0413
 # pylint: disable=C0301
-import pandas as pd
+
 import plotly.express as px
-from dash import Dash, dcc, html, Input, Output, no_update
+from dash import Dash, dcc, html, Input, Output
 import dash_ag_grid as dag
 import dash_bootstrap_components as dbc
 
@@ -19,7 +19,11 @@ from data import VisaWaitTimeData
 from data_perm import ImmigrationData
 
 asof_date = datetime.today().date()
-df = pd.read_csv("assets/data.csv") # read the saved data parsed from the website
+# LOAD THE DATA: read previously saved data parsed from the website df = pd.read_csv("assets/data.csv")
+visa_wait_data = VisaWaitTimeData(asof_date)
+city_df = visa_wait_data.read_world_cities()
+visa_df = visa_wait_data.read_visa_wait_times()
+df = visa_wait_data.map_city_country(city_df, visa_df)
 countries = len(df["country"].unique())
 cities = df["city_ascii"].nunique()
 last_update = str(df["update_date"].unique()[0])
@@ -28,19 +32,19 @@ immigration_data = ImmigrationData(asof_date)
 emp_based_pd = immigration_data.emp_based_pd
 
 VISA_TYPES = [
-        "Petition-Based Temporary Workers (H, L, O, P, Q)",
-        "Student/Exchange Visitors (F, M, J)",
-        "Crew and Transit\xa0(C, D, C1/D)",
-        "Visitors (B1/B2)"]
+        "Petition-Based (H,L,O,P,Q)",
+        "Study and Exchange (F,M,J)",
+        "Crew and Transit (C,D,C1/D)",
+        "Tourism and Visit (B1/B2)"]
 
 app = Dash(__name__,  external_stylesheets=[dbc.themes.SPACELAB])
 server = app.server
 
 header_0 = html.Div(
     children=[
-        html.H1(children="Global US-Visa Wait Times",
+        html.H1(children="Global US-Visa Appointment Wait Times",
                 style={"font-family": "Courier", "font-size": "30px", "font-weight": "bold", 'color': 'darkblue'}),
-        html.H5(children="A summary of wait-time to obtain a U.S. visa for citizen of a foreign country who seeks to travel to the United States",
+        html.H5(children="A summary of average time nonimmigrant visa applicants waited for an interview in the previous month",
                 style={"font-family": "Courier", "font-size": "17px"}),
         html.Div(children=f"As of: {asof_date}",
                 style={"font-family": "Courier", "font-size": "15px"}),
@@ -98,15 +102,14 @@ metrics_name = ['Countries', 'Cities', 'Visa Types', 'Last Update']
 cards_metric = [make_metric_card(name, value) for name, value in zip(metrics_name, metrics_value)]
 
 # function to create visa wait time global map
-def plot_global_map(visa_type: str="Petition-Based Temporary Workers (H, L, O, P, Q)"):
+def plot_global_map(visa_type: str="Petition-Based (H,L,O,P,Q)"):
     "select the visa type to plot in map"
-    assert visa_type in VISA_TYPES
 
-    plot_df = df.rename(columns={visa_type: "Wait Days"}).sort_values("country")
+    plot_df = df.rename(columns={visa_type: "Wait Time"}).sort_values("country")
     fig = px.scatter_map(
         plot_df, lat="lat", lon="lng", color="country",
-        hover_name="city_ascii", hover_data=["Wait Days"],
-        title = "Global Wait Time in Days: " + visa_type,
+        hover_name="city_ascii", hover_data=["Wait Time"],
+        title = "Appointment Wait Time in Months: " + visa_type,
         width=1250, height=700
         )
     fig.update_layout(
@@ -138,14 +141,14 @@ def get_country_data():
     "get the country data for the grid"
     column_defs = [
         { 'field': 'City/Post' },
-        { 'field': 'Petition-Based Temporary Workers (H, L, O, P, Q)' },
-        { 'field': 'Student/Exchange Visitors (F, M, J)' },
-        { 'field': 'Crew and Transit\xa0(C, D, C1/D)'},
-        { 'field': 'Visitors (B1/B2)'},
+        { 'field': 'Petition-Based (H,L,O,P,Q)' },
+        { 'field': 'Study and Exchange (F,M,J)' },
+        { 'field': 'Crew and Transit (C,D,C1/D)'},
+        { 'field': 'Tourism and Visit (B1/B2)'},
         { 'field': 'country'}
     ]
     grid = dag.AgGrid(
-        id="country-waiting-days",
+        id="country-waiting-time",
         rowData=df[["City/Post"] + VISA_TYPES + ["country"]].to_dict("records"),
         columnDefs=column_defs,
         defaultColDef={"sortable": True, "filter": True, "resizable": True,
@@ -163,7 +166,7 @@ visa_dropdown = html.Div(
                     dcc.Dropdown(
                         id="visa-type-dropdown",
                         options=[{"label": visa_type, "value": visa_type} for visa_type in VISA_TYPES],
-                        value="Petition-Based Temporary Workers (H, L, O, P, Q)"
+                        value="Petition-Based (H,L,O,P,Q)"
                     ),
                     html.Div(id="output")
                 ],
@@ -183,9 +186,6 @@ country_dropdown = html.Div(
                 style={"width": "20%", "font-family": "Courier", "font-size": "15px"},
     )
 
-reset_button = html.Div(
-    id="reset_btn", children=html.Button(id="reset-btn", children="Reset", n_clicks=0)
-)
 
 # Callback to manage selection changes for radio buttons
 @app.callback( Output('wait-time-map', 'figure'),
@@ -197,7 +197,7 @@ def update_map_plot(visa_type):
     "update the map plot based on the selected visa type"
     return plot_global_map(visa_type)
 
-@app.callback( Output('country-waiting-days', 'rowData'),
+@app.callback( Output('country-waiting-time', 'rowData'),
                [Input('country-dropdown', 'value')],
                prevent_initial_call=True
                )
@@ -207,13 +207,6 @@ def update_country_data(country):
     filter_df = df[df["country"] == country][["City/Post"] + VISA_TYPES + ["country"]].to_dict("records")
     return filter_df if country is not None else df[["City/Post"] + VISA_TYPES + ["country"]].to_dict("records")
 
-@app.callback( [Output('country-waiting-days', 'rowData', allow_duplicate=True),
-                Output('country-waiting-days', 'filterModel', allow_duplicate=True),
-                Output('country-waiting-days', 'columnState', allow_duplicate=True)
-                ],
-               Input('reset-btn', "n_clicks"),
-               prevent_initial_call=True
-               )
 
 ###### Employment-based Visa Wait Times ######
 # helper function to create metric cards
@@ -295,19 +288,6 @@ def update_pd_data(table):
     filter_df = emp_based_pd[emp_based_pd["table"] == table].drop(columns="table").to_dict("records")
     return filter_df if table is not None else emp_based_pd.to_dict("records")
 
-@app.callback( [Output('priority-days', 'rowData', allow_duplicate=True),
-                Output('priority-days', 'filterModel', allow_duplicate=True),
-                Output('priority-days', 'columnState', allow_duplicate=True)
-                ],
-               Input('reset-btn', "n_clicks"),
-               prevent_initial_call=True
-               )
-
-def reset_country_data(n_clicks):
-    # If button is clicked, reset the grid to the original DataFrame
-    if n_clicks > 0:
-        return df[["City/Post"] + VISA_TYPES + ["country"]].sort_values("City/Post").to_dict("records"), {}, []
-    return no_update, no_update, no_update
 
 
 # Create app layout
@@ -325,7 +305,7 @@ app.layout = dbc.Container([
             ])
     ]),
     html.Br(),
-    dbc.Row([dbc.Col([country_dropdown, html.Br(), country_wait_time, html.Br(), reset_button])]),
+    dbc.Row([dbc.Col([country_dropdown, html.Br(), country_wait_time, html.Br()])]),
     html.Br(),
     html.Br(),
 

@@ -5,6 +5,7 @@ NOTE: The travel.state.gov website has deprecated on March 8th, 2025
 from datetime import datetime
 import zipfile
 import io
+import re
 from typing import Union
 import requests
 from bs4 import BeautifulSoup
@@ -21,9 +22,9 @@ class VisaWaitTimeData:
     SIMPLEMAP_URL = "https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.77.zip"
     VISA_WAIT_TIME_URL = "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html"
     MISSING_CITIES = {
-        "Chennai ( Madras)": "Chennai",
-        "Ciudad Juarez": "Ciudad Juarez",
-        "Curacao": "Curacao",
+        "Chennai (Madras)": "Chennai",
+        "Ciudad Juarez": "Juarez",
+        "Curacao": "Willemstad",
         "Dar Es Salaam": "Dar es Salaam",
         "Kuwait": "Kuwait City",
         "Mexicali Tpf": "Mexicali",
@@ -41,6 +42,12 @@ class VisaWaitTimeData:
         "Usun-New York": "New York",
         "Washington Refugee Processing Center": "Washington"
     }
+
+    VISA_TYPES = {
+            "H,L,O,P,Q": "Petition-Based (H,L,O,P,Q)",
+            "F,M,J": "Study and Exchange (F,M,J)",
+            "C,D,C1/D": "Crew and Transit (C,D,C1/D)",
+            "B1/B2": "Tourism and Visit (B1/B2)"}
 
     def __init__(self, asof_date: Union[datetime, str]):
         self.asof_date = str(asof_date.date) if isinstance(asof_date, datetime) else asof_date
@@ -74,7 +81,7 @@ class VisaWaitTimeData:
             print("Failed to download ZIP file")
             return None
 
-    def read_visa_wait_times(self):
+    def read_visa_wait_times_old(self):
         """Read the visa wait times data from the website"""
 
         df = pd.read_html(VisaWaitTimeData.VISA_WAIT_TIME_URL)[0]
@@ -97,6 +104,24 @@ class VisaWaitTimeData:
                 df = df.rename(columns={col: col.split("Interview Required")[1].strip()})
 
         return df[["asof_date", "update_date"] + [col for col in df.columns if col not in ["asof_date", "update_date"]]]
+
+    def read_visa_wait_times(self):
+
+        df = pd.read_html(VisaWaitTimeData.VISA_WAIT_TIME_URL)[0]
+        for col in df.columns[1:]:
+            df[col] = df[col].fillna("NA")
+            df[col] = df[col].str.split("month", expand=True)[0].str.strip()
+            df[col] = np.where(df[col].isnull(), "NA", df[col])
+            df[col] = df[col].astype("str")
+            if "Average wait times" in col:
+                df = df.drop(columns=col)
+            else:
+                visa_type = re.search(r'\((.*?)\)', col).group(1)
+                df = df.rename(columns={col: VisaWaitTimeData.VISA_TYPES.get(visa_type)})
+
+        df["asof_date"] = self.asof_date
+        df["update_date"] = self.update_date
+        return df
 
     @staticmethod
     def select_dup_cities(city_df: pd.DataFrame, cities: list):

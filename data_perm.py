@@ -64,8 +64,10 @@ class ImmigrationData:
         try:
             soup = BeautifulSoup(res.content, "html.parser")
             child_soup = soup.find_all('a', class_="btn btn-lg btn-success")
-            if len(child_soup) == 2:
+            if len(child_soup) == 2 and "href" in child_soup[1].attrs:
                 child_soup = child_soup[1]
+            else:
+                child_soup = child_soup[0]
 
             bulletin_title = f"Visa Bulletin for {child_soup.text}"
             bulletin_link = "https://travel.state.gov" + child_soup.attrs['href']

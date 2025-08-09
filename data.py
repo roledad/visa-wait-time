@@ -19,7 +19,7 @@ import pandas as pd
 class VisaWaitTimeData:
     """Class to retrieve and process the visa wait time data"""
     # URL of the ZIP file containing the world cities data
-    SIMPLEMAP_URL = "https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.77.zip"
+    SIMPLEMAP_URL = "https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.901.zip"
     VISA_WAIT_TIME_URL = "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html"
     MISSING_CITIES = {
         "Chennai (Madras)": "Chennai",
@@ -63,7 +63,9 @@ class VisaWaitTimeData:
     def read_world_cities(self):
         """Read the world cities data from the ZIP file"""
 
-        response = requests.get(VisaWaitTimeData.SIMPLEMAP_URL, timeout=10)
+        headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        response = requests.get(VisaWaitTimeData.SIMPLEMAP_URL, timeout=10, headers=headers)
         if response.status_code == 200:
             with zipfile.ZipFile(io.BytesIO(response.content)) as z:
                 file_names = z.namelist()   # List files in the ZIP

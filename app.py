@@ -3,6 +3,7 @@ This module runs the Plotly Dash to plot the visa wait time and send to server
 '''
 
 from datetime import datetime
+import pandas as pd
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -21,7 +22,7 @@ from data_perm import ImmigrationData
 asof_date = datetime.today().date()
 # LOAD THE DATA: read previously saved data parsed from the website df = pd.read_csv("assets/data.csv")
 visa_wait_data = VisaWaitTimeData(asof_date)
-city_df = visa_wait_data.read_world_cities()
+city_df = pd.read_csv("assets/worldcities.csv") #visa_wait_data.read_world_cities()
 visa_df = visa_wait_data.read_visa_wait_times()
 df = visa_wait_data.map_city_country(city_df, visa_df)
 countries = len(df["country"].unique())

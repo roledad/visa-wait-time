@@ -64,24 +64,38 @@ class VisaWaitTimeData:
         """Read the world cities data from the ZIP file"""
 
         headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
-        response = requests.get(VisaWaitTimeData.SIMPLEMAP_URL, timeout=10, headers=headers)
-        if response.status_code == 200:
-            with zipfile.ZipFile(io.BytesIO(response.content)) as z:
-                file_names = z.namelist()   # List files in the ZIP
-                print("Files in SIMPLEMAP ZIP:", file_names)
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+            "Accept": "*/*",
+            "Referer": "https://simplemaps.com/data/world-cities",   # helps avoid 403 on some hosts
+        }
+        try:
+            r = requests.get(VisaWaitTimeData.SIMPLEMAP_URL, timeout=20, headers=headers, allow_redirects=True)
+            ctype = (r.headers.get("Content-Type") or "").lower()
+            print(f"[CITY] GET {VisaWaitTimeData.SIMPLEMAP_URL} -> {r.status_code} final={r.url} ctype={ctype} len={r.headers.get('Content-Length')}")
+            # Some providers return HTML with 200; ensure it's a ZIP (or begins with 'PK')
+            if r.status_code != 200 or not ("zip" in ctype or r.content[:2] == b"PK"):
+                raise RuntimeError(f"Unexpected response: status={r.status_code} ctype={ctype}")
 
-                csv_filename = "worldcities.csv"
-                if csv_filename in file_names:  # Ensure this matches the exact file name
-                    with z.open(csv_filename) as f:
-                        df = pd.read_csv(f)
-                        return df
-                else:
-                    print(f"{csv_filename} not found in ZIP.")
-                    return None
-        else:
-            print("Failed to download ZIP file")
-            return None
+            with zipfile.ZipFile(io.BytesIO(r.content)) as z:
+                names = z.namelist()
+                print("[CITY] Files in ZIP:", names)
+                # SimpleMaps usually has exactly this name:
+                target = "worldcities.csv"
+                if target not in names:
+                    # fallback: first CSV in the archive
+                    csvs = [n for n in names if n.lower().endswith(".csv")]
+                    if not csvs:
+                        raise RuntimeError("No CSV file found inside ZIP")
+                    target = csvs[0]
+                with z.open(target) as f:
+                    df = pd.read_csv(f)
+            if df is None or df.empty:
+                raise RuntimeError("Loaded cities CSV is empty")
+            return df
+
+        except Exception as e:
+            # Make the failure obvious and stop boot with a clear message
+            raise RuntimeError(f"City ZIP load failed: {e}") from e
 
     def read_visa_wait_times_old(self):
         """Read the visa wait times data from the website"""
